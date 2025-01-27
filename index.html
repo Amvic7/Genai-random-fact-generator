@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Fact</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Fact</h1>
+        <p id="fact"></p>
+        <button id="newFactButton">Show Another Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3000 years old and still edible.",
+            "Octopuses have three hearts. Two pump blood to the gills, while the third pumps it to the rest of the body.",
+            "Bananas are berries, but strawberries are not. In botanical terms, a berry is a fruit produced from the ovary of a single flower.",
+            "A group of flamingos is called a 'flamboyance'.",
+            "Wombat poop is cube-shaped. This unique shape prevents the poop from rolling away, marking their territory.",
+            "The Eiffel Tower can be 15 cm taller during the summer due to thermal expansion of the metal.",
+            "A day on Venus is longer than a year on Venus. It takes about 243 Earth days to rotate once on its axis, but only about 225 Earth days to orbit the Sun.",
+            "Humans share 60% of their DNA with bananas.",
+            "The shortest war in history was between Britain and Zanzibar on August 27, 1896. Zanzibar surrendered after 38 minutes.",
+            "A jiffy is an actual unit of time. It is defined as 1/100th of a second."
+        ];
+
+        function showRandomFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact').innerText = facts[randomIndex];
+        }
+
+        // Show a random fact on page load
+        showRandomFact();
+
+        // Add event listener to button
+        document.getElementById('newFactButton').addEventListener('click', showRandomFact);
+    </script>
+</body>
+</html>
